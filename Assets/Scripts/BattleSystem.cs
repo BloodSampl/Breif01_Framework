@@ -26,8 +26,8 @@ public class BattleSystem : MonoBehaviour
 
         // let's set our player power levels, using an algorithm, the simpliest would be luck + style + rhythm
         // this algorthim should be the same for each character to keep it fair.
-        float playerOnePowerLevel = playerOneLuck + playerOneStyle + playerOneRyhtm; // I chnged this to float to get the precentage later
-        float playerTwoPowerLevel = playerTwoLuck + playerTwoStyle + playerTwoRyhtm; // I chnged this to float to get the precentage later
+        int playerOnePowerLevel = playerOneLuck + playerOneStyle + playerOneRyhtm; // I chnged this to float to get the precentage later
+        int playerTwoPowerLevel = playerTwoLuck + playerTwoStyle + playerTwoRyhtm; // I chnged this to float to get the precentage later
 
         // Debug out the two players, power levels.
         Debug.Log("Player one power level = " + playerOnePowerLevel);
@@ -35,9 +35,9 @@ public class BattleSystem : MonoBehaviour
 
         // calculate the percentage chance of winning the fight for each character.
         // todo this you'll need to add the two powers together, then divide you characters power against this and multiply the result by 100.
-        float totalPower = playerOnePowerLevel + playerTwoPowerLevel;
-        float playerOneChanceToWin = (playerOnePowerLevel / totalPower) * 100; // I chnged this to float to get the precentage later
-        float playerTwoChanceToWin = (playerTwoPowerLevel / totalPower) * 100; // I chnged this to float to get the precentage later
+        int totalPower = playerOnePowerLevel + playerTwoPowerLevel;
+        int playerOneChanceToWin = (playerOnePowerLevel * 100) / totalPower; // I changed this to float to get the precentage later
+        int playerTwoChanceToWin = (playerTwoPowerLevel * 100) / totalPower; // I changed this to float to get the precentage later
 
         // Debug out the chance of each character to win.
         Debug.Log("Player one chance to win = " + playerOneChanceToWin);

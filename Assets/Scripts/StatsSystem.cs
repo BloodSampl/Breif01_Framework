@@ -26,7 +26,7 @@ public class StatsSystem : MonoBehaviour
         int remainingPool = totalPool;
         strength = Random.Range(0, 11);
         remainingPool -= strength;
-        strength = totalPool - remainingPool;
+        //strength = totalPool - remainingPool;
         agility = Random.Range(0, 11);
         remainingPool -= agility;
         agility = totalPool - (remainingPool + strength);
