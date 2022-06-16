@@ -49,14 +49,19 @@ public class BattleSystem : MonoBehaviour
         if(playerOneChanceToWin > playerTwoChanceToWin)
         {
             Debug.Log("Player One Wins");
+            int experienceGain = playerOneChanceToWin - playerTwoChanceToWin;
+            Debug.Log("Player one gained " + experienceGain);
         }
         else if(playerTwoChanceToWin > playerOneChanceToWin)
         {
             Debug.Log("Player Two Wins");
+            int experienceGain = playerTwoChanceToWin - playerOneChanceToWin;
+            Debug.Log("Player Two gained " + experienceGain);
         }
         else
         {
             Debug.Log("Its a Draw");
+            Debug.Log("Both Players Gain " + 10);
         }
         // Debug out how much experience they should gain based on the difference of their chances to win, or if it's a draw award a default amount.
     }
