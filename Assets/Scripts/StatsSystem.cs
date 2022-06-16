@@ -56,11 +56,11 @@ public class StatsSystem : MonoBehaviour
         // luck should be based off our intelligence and be converted at a rate of 1 : 1.5f
         luck = 1;
         float luckF = (float)luck;
-        luckF = inteligenceMulti * intelligence;
+        luckF = (inteligenceMulti * intelligence) / 1.5f;
         // rhythm should be based off our agility and be converted at a rate of 1 : 0.5 .
         rhythm = 1;
         float rhythmF = (float)rhythm;
-        rhythmF = agilityMulti * agility;
+        rhythmF = (agilityMulti * agility) / 0.5f;
 
         // Debug out our current dancing stat values (style, luck, rhythm)
         Debug.Log(styleF);
@@ -84,8 +84,8 @@ public class StatsSystem : MonoBehaviour
 
         // let's recalculate our style, luck and rhytmn as our initial stats have changed.
         styleF = styleF + (strengthMulti * strength);
-        luckF = luckF + (inteligenceMulti * intelligence);
-        rhythmF = rhythmF +(agilityMulti * agility);
+        luckF = luckF + ((inteligenceMulti * intelligence) / 1.5f);
+        rhythmF = rhythmF +((agilityMulti * agility) / .5f);
         // Debug out our new dancing stat values
         Debug.Log(styleF);
         Debug.Log(luckF);
